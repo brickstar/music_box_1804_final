@@ -23,8 +23,11 @@ describe 'admin user visits genre index' do
 
     fill_in 'genre[name]', with: 'jazz'
 
+    expect(Genre.count).to eq(2)
+
     click_on 'Create Genre'
 
+    expect(Genre.count).to eq(3)
     expect(current_path).to eq(genres_path)
     expect(Genre.last.name).to eq('jazz')
     genre3 = Genre.last
