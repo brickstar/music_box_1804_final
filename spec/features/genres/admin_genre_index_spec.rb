@@ -13,7 +13,7 @@ describe 'admin user visits genre index' do
     expect(page).to have_content(genre2.name)
   end
 
-  it 'should see a form to create new genre' do
+  it 'should see a form to create new genre, and be able to create a genre' do
     admin = User.new(username: 'pearl', password: 'lovelove', role: 1)
     genre1 = Genre.create!(name: 'horror')
     genre2 = Genre.create!(name: 'spy')
