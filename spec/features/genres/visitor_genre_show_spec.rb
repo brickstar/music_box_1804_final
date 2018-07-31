@@ -19,4 +19,10 @@ describe 'visitor visits genre show spec' do
     expect(page).to have_content("Play Count: #{@song2.play_count}")
     expect(page).to_not have_content("Title: #{@song3.title}")
   end
+
+  it 'should see average rating for all songs' do
+    visit genre_path(@genre)
+
+    expect(page).to have_content("Average rating for songs: #{@genre.average_song_rating}")
+  end
 end
