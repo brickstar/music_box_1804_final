@@ -28,7 +28,7 @@ describe 'visitor visits genre index' do
 
     expect(page).to have_link(genre1.name)
     expect(page).to have_link(genre2.name)
-
+    
     click_on "#{genre1.name}"
 
     expect(current_path).to eq(genre_path(genre1))
