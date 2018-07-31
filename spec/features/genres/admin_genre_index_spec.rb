@@ -26,8 +26,8 @@ describe 'admin user visits genre index' do
     expect(current_path).to eq(genres_path)
     expect(Genre.last.name).to eq('jazz')
     genre3 = Genre.last
-    expect(page).to have_content(genre3.name)
-    expect(page).to have_content(genre2.name)
-    expect(page).to have_content(genre1.name)
+    expect(page).to have_link(genre3.name)
+    expect(page).to have_link(genre2.name)
+    expect(page).to have_link(genre1.name)
   end
 end
