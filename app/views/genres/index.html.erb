@@ -2,3 +2,13 @@
 <% @genres.each do |genre| %>
 <%= genre.name %>
 <% end %>
+
+<% if current_admin? %>
+  <%= form_for @new_genre do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit %>
+  <% end %>
+<% end %>
