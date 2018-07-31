@@ -2,8 +2,10 @@ require 'rails_helper'
 
 describe 'admin user visits genre index' do
   it 'should see all genre names' do
+    admin = User.new(username: 'pearl', password: 'lovelove', role: 1)
     genre1 = Genre.create!(name: 'rock')
     genre2 = Genre.create!(name: 'roll')
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
     visit genres_path
 
