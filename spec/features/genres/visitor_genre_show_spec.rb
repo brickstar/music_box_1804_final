@@ -25,4 +25,6 @@ describe 'visitor visits genre show spec' do
 
     expect(page).to have_content("Average rating for songs: #{@genre.average_song_rating}")
   end
+
+  
 end
