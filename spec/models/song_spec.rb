@@ -17,7 +17,6 @@ describe Song, type: :model do
   describe 'class methods' do
     it '.songs_with_same_rating' do
       artist = Artist.create!(name: 'poly')
-      genre = Genre.create(name: 'psych rock')
       song1 = Song.create!(title: 'light', length: 1, play_count: 1, rating: 3, artist: artist)
       song2 = Song.create!(title: 'dark', length: 3, play_count: 1, rating: 3, artist: artist)
       song3 = Song.create!(title: 'blah', length: 3, play_count: 1, rating: 3, artist: artist)
