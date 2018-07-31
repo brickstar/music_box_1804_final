@@ -1,0 +1,8 @@
+<h1>Page for: <%= @genre.name %></h1>
+
+<h2>Songs for this Genre</h2>
+<% @genre.songs.each do |song| %>
+  Title: <%= song.title %>
+  Length: <%= song.length %>
+  Play Count: <%= song.play_count %>
+<% end %>
