@@ -20,6 +20,10 @@ class GenresController < ApplicationController
     end
   end
 
+  def new
+    render file: 'public/404'
+  end
+
   private
 
   def genre_params
