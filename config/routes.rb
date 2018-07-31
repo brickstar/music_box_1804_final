@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :songs, except: [:index], param: :slug
   end
 
+  resources :genres
+
   resources :songs, only: [:index, :show]
 
   resources :playlists
