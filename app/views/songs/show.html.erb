@@ -1,3 +1,7 @@
 <h1><%= @song.title %></h1>
 <h3><%= @song.length%></h3>
 <p>Rating: <%= @song.rating %></p>
+<h2>Genres for this song:</h2>
+<% @song.genres.each do |genre| %>
+Name: <%= genre.name %>
+<% end %>
