@@ -11,13 +11,16 @@ Rails.application.routes.draw do
     resources :songs, except: [:index], param: :slug
   end
 
-  resources :songs, only: [:index]
-  
+  resources :genres, only: [:index, :show]
+
+  resources :songs, only: [:index, :show]
+
   resources :playlists
 
   resources :users, only: [:new, :create, :show]
 
   namespace :admin do
+    resources :genres, only: [:create, :index]
     resources :categories, only: [:index]
   end
 

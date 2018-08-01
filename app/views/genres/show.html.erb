@@ -1,0 +1,16 @@
+<h1>Page for: <%= @genre.name %></h1>
+
+<% unless @genre.songs.empty? %>
+  <h2>Songs for this Genre</h2>
+  <% @genre.songs.each do |song| %>
+    Title: <%= song.title %>
+    Length: <%= song.length %>
+    Play Count: <%= song.play_count %>
+  <% end %>
+
+  <h2>Average rating for songs: <%= @genre.average_song_rating %></h2>
+  <h2>Highest rated song: <%= @genre.highest_rated_song.title %></h2>
+  <h3>Rating: <%= @genre.highest_rated_song.rating %></h3>
+  <h2>Lowest rated song: <%= @genre.lowest_rated_song.title %></h2>
+  <h3>Rating: <%= @genre.lowest_rated_song.rating %></h3>
+<% end %>
