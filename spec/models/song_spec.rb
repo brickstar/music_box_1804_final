@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe Song, type: :model do
   describe 'validations' do
-
     it{should validate_presence_of(:title)}
     it{should validate_presence_of(:length)}
     it{should validate_presence_of(:play_count)}
@@ -11,7 +10,6 @@ describe Song, type: :model do
   describe 'relationships' do
     it{should belong_to(:artist)}
     it{should have_many(:genres).through(:song_genres)}
-
   end
 
   describe 'class methods' do
@@ -24,6 +22,15 @@ describe Song, type: :model do
       song5 = Song.create!(title: 'not here!', length: 3, play_count: 1, rating: 5, artist: artist)
 
       expect(Song.songs_with_same_rating(song1.rating)).to eq([song1, song2, song3, song4])
+    end
+  end
+
+  describe 'song rating attribute' do
+    it 'should be 0 by default' do
+      artist = Artist.create!(name: 'poly')
+      song1 = Song.create!(title: 'light', length: 1, play_count: 1, artist: artist)
+
+      expect(song1.rating).to eq(0)
     end
   end
 end
