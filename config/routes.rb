@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
 
   namespace :admin do
-    resources :genres, only: [:create, :index]
+    resources :genres, only: [:create]
     resources :categories, only: [:index]
   end
 

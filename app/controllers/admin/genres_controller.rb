@@ -1,10 +1,6 @@
 class Admin::GenresController < ApplicationController
   before_action :require_admin
 
-  def index
-
-  end
-
   def create
     @genre = Genre.new(genre_params)
     if @genre.save
