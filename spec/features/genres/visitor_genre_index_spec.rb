@@ -28,15 +28,9 @@ describe 'visitor visits genre index' do
 
     expect(page).to have_link(genre1.name)
     expect(page).to have_link(genre2.name)
-    
+
     click_on "#{genre1.name}"
 
     expect(current_path).to eq(genre_path(genre1))
-  end
-
-  it 'should not see new path' do
-    visit new_genre_path
-
-    expect(page).to have_content("The page you were looking for doesn't exist.")
   end
 end
